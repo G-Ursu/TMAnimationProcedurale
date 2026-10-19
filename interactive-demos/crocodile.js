@@ -136,7 +136,7 @@ function reset() {
   elapsed = 0;
   lastTime = 0;
 
-  status.textContent = "Move your mouse or touch the simulation to begin.";
+  status.textContent = "Bougez votre souris ou touchez la simulation pour guider le crocodile.";
   draw();
 }
 
@@ -344,7 +344,7 @@ function updatePointer(event) {
   );
 
   hasPointer = true;
-  status.textContent = "";
+  status.textContent = "Simulation opérationnelle";
 }
 
 canvas.addEventListener("pointerdown", event => {
@@ -359,7 +359,7 @@ canvas.addEventListener("pointermove", event => {
 });
 
 canvas.addEventListener("pointerup", () => {
-  status.textContent = "Move your mouse or touch the simulation to guide the character.";
+  status.textContent = "Bougez votre souris ou touchez la simulation pour guider le crocodile.";
 });
 
 resetButton.addEventListener("click", reset);
