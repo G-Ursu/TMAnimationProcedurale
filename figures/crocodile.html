@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0e14">
+  <meta name="description" content="Une démonstration interactive d’animation procédurale illustrant le mouvement fluide et la cinématique inverse.">
+  <title>Animation procédurale</title>
+  <link rel="stylesheet" href="../style.css">
+  <script src="../interactive-demos/crocodile.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a href="../index.html" class="back-link">← Accueil</a>
+    <span class="topbar-label">FIGURE 5 · Prototype de Locomotion d'un Crocodile</span>
+  </header>
+
+  <main>
+    <section class="intro">
+      <p class="eyebrow">ANIMATION PROCÉDURALE</p>
+      <h1>Prototype de Locomotion d'un Crocodile</h1>
+      <p class="description">
+        Déplacez votre souris ou votre doigt sur la simulation
+        pour guider le personnage. 
+      </p>
+    </section>
+
+    <section class="simulation-panel" aria-label="Simulation interactive">
+      <div class="game-header">
+        <span class="game-indicator"></span>
+        <span>SIMULATION EN TEMPS RÉEL</span>
+        <span class="game-hint">Souris · Tactile</span>
+      </div>
+
+      <div class="game-container">
+        <canvas
+          id="simulation"
+          aria-label="Animation procédurale interactive. Déplacez le pointeur pour guider le personnage."
+        ></canvas>
+      </div>
+
+      <div class="controls">
+        <p id="status" aria-live="polite">
+          Déplacez votre souris ou touchez la simulation pour commencer.
+        </p>
+        <button id="reset" type="button">Réinitialiser l’animation ↺</button>
+      </div>
+    </section>
+
+    <section class="notes">
+      <h2>Principe de fonctionnement</h2>
+      <p>
+        Deux suiveurs lissés suivent le pointeur. Une chaîne
+        de segments corporels suit le second suiveur, tandis
+        que les bras utilisent FABRIK (Forward And Backward
+        Reaching Inverse Kinematics) pour conserver la longueur
+        de leurs segments.
+      </p>
+      <hint>
+        Pour l'intégration au site web, le code Python original a été traduit en JavaScript par ChatGPT 5
+      </hint>
+    </section>
+  </main>
+
+  <footer>Développement d’un outil d’animation
+procédurale pour Godot</footer>
+</body>
+</html>

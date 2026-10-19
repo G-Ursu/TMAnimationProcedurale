@@ -1,0 +1,261 @@
+
+:root {
+  color-scheme: dark;
+  --background: #0b0e14;
+  --panel: #111722;
+  --border: #252e3c;
+  --text: #edf2f8;
+  --muted: #9aa8ba;
+  --accent: #73e6c1;
+  --width: 920px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background: var(--background);
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background:
+    radial-gradient(ellipse at 50% 0%, #41638720, transparent 55%),
+    var(--background);
+  color: var(--text);
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.65;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  min-height: 62px;
+  padding: 14px max(24px, calc((100% - var(--width)) / 2));
+  border-bottom: 1px solid #9aa8ba26;
+}
+
+.back-link {
+  color: var(--muted);
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  color: var(--accent);
+}
+
+.topbar-label,
+.eyebrow {
+  font-size: 0.7rem;
+  font-weight: 750;
+  letter-spacing: 0.13em;
+}
+
+.topbar-label {
+  color: var(--muted);
+  text-align: right;
+}
+
+main {
+  width: min(var(--width), calc(100% - 40px));
+  margin: 0 auto;
+  padding: 62px 0 72px;
+}
+
+.intro {
+  margin-bottom: 32px;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  color: var(--accent);
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2.4rem, 7vw, 4.4rem);
+  font-weight: 750;
+  letter-spacing: -0.055em;
+  line-height: 1.08;
+}
+
+.description {
+  max-width: 620px;
+  margin: 20px 0 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.simulation-panel {
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--panel);
+  box-shadow: 0 24px 70px #0000003d;
+}
+
+.game-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 12px 18px;
+  border-bottom: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.7rem;
+  font-weight: 750;
+  letter-spacing: 0.1em;
+}
+
+.game-indicator {
+  width: 8px;
+  height: 8px;
+  flex: 0 0 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 12px #73e6c166;
+}
+
+.game-hint {
+  margin-left: auto;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.game-container {
+  width: 100%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  background: #000;
+}
+
+#simulation {
+  display: block;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+  cursor: crosshair;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 18px;
+  border-top: 1px solid var(--border);
+}
+
+.controls p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+button {
+  flex: 0 0 auto;
+  padding: 9px 13px;
+  border: 1px solid #344254;
+  border-radius: 8px;
+  background: #192331;
+  color: var(--text);
+  font: inherit;
+  font-size: 0.82rem;
+  cursor: pointer;
+}
+
+button:hover {
+  border-color: var(--accent);
+  background: #202f3e;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.notes {
+  max-width: 700px;
+  margin: 54px auto 0;
+}
+
+.notes h2 {
+  margin: 0 0 12px;
+  font-size: 1.35rem;
+  letter-spacing: -0.025em;
+}
+
+.notes p {
+  color: var(--muted);
+}
+
+.notes .hint {
+  margin-top: 20px;
+  font-size: 0.85rem;
+}
+
+footer {
+  padding: 22px 20px;
+  border-top: 1px solid #9aa8ba26;
+  color: var(--muted);
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .topbar {
+    padding: 14px 18px;
+  }
+
+  .topbar-label {
+    max-width: 130px;
+    font-size: 0.62rem;
+  }
+
+  main {
+    width: calc(100% - 28px);
+    padding-top: 42px;
+  }
+
+  .description {
+    font-size: 0.95rem;
+  }
+
+  .game-header {
+    padding: 11px 12px;
+    font-size: 0.62rem;
+  }
+
+  .game-hint {
+    font-size: 0.62rem;
+  }
+
+  .controls {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 14px;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .notes {
+    margin-top: 38px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
