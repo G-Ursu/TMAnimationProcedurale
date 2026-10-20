@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0e14">
+  <meta name="description" content="Démonstration d'animation procédurale.">
+  <title>Contraintes</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a href="../index.html" class="back-link">← Accueil</a>
+    <span class="topbar-label">FIGURE 5 · Contraintes </span>
+  </header>
+
+  <main>
+    <section class="intro">
+      <p class="eyebrow">ANIMATION PROCÉDURALE</p>
+      <h1>Contraintes </h1>
+      <p class="description">
+        Démonstration de contraintes.
+      </p>
+    </section>
+
+    <section class="simulation-panel" aria-label="Démonstration vidéo">
+      <div class="game-header">
+        <span class="game-indicator"></span>
+        <span>DÉMONSTRATION VIDÉO</span>
+        <span class="game-hint">Lecture · Pause</span>
+      </div>
+
+      <div class="game-container">
+        <video
+          id="demonstration"
+          controls
+          playsinline
+          preload="metadata"
+          aria-label="Vidéo de démonstration"
+          style="display: block; width: 100%; height: auto;"
+        >
+          <source src="./video.mp4" type="video/mp4">
+          Votre navigateur ne prend pas en charge la lecture vidéo.
+        </video>
+      </div>
+
+      <div class="controls">
+        <p id="status" aria-live="polite">
+          Lancez la vidéo pour voir la démonstration.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Développement d’un outil d’animation procédurale pour Godot
+  </footer>
+</body>
+</html>
