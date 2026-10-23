@@ -31,6 +31,8 @@ body {
   line-height: 1.65;
 }
 
+
+
 .topbar {
   display: flex;
   justify-content: space-between;
@@ -45,6 +47,7 @@ body {
   color: var(--muted);
   font-size: 0.9rem;
   text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 .back-link:hover {
@@ -62,6 +65,7 @@ body {
   color: var(--muted);
   text-align: right;
 }
+
 
 main {
   width: min(var(--width), calc(100% - 40px));
@@ -92,6 +96,8 @@ h1 {
   color: var(--muted);
   font-size: 1.05rem;
 }
+
+
 
 .simulation-panel {
   overflow: hidden;
@@ -130,20 +136,26 @@ h1 {
   letter-spacing: 0;
 }
 
+
+
 .game-container {
+  position: relative;
   width: 100%;
-  aspect-ratio: 1;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
   background: #000;
 }
 
-#simulation {
+
+
+.game-container video {
   display: block;
   width: 100%;
   height: 100%;
-  touch-action: none;
-  cursor: crosshair;
+  object-fit: contain;
+  background: #000;
 }
+
 
 .controls {
   display: flex;
@@ -160,6 +172,7 @@ h1 {
   font-size: 0.85rem;
 }
 
+
 button {
   flex: 0 0 auto;
   padding: 9px 13px;
@@ -170,6 +183,9 @@ button {
   font: inherit;
   font-size: 0.82rem;
   cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease;
 }
 
 button:hover {
@@ -182,6 +198,8 @@ a:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 4px;
 }
+
+
 
 .notes {
   max-width: 700px;
@@ -210,6 +228,7 @@ footer {
   font-size: 0.8rem;
   text-align: center;
 }
+
 
 @media (max-width: 600px) {
   .topbar {
@@ -254,8 +273,18 @@ footer {
   }
 }
 
+
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
   }
 }
