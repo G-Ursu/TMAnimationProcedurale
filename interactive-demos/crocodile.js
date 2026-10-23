@@ -142,12 +142,13 @@ function reset() {
 
 function resizeCanvas() {
   const rect = canvas.getBoundingClientRect();
+  if (!rect.width || !rect.height) return;
+
   const dpr = Math.min(window.devicePixelRatio || 1, 2);
 
   canvas.width = Math.round(rect.width * dpr);
   canvas.height = Math.round(rect.height * dpr);
 
-  // All simulation calculations remain in 1000 x 1000 coordinates.
   ctx.setTransform(
     canvas.width / SIZE, 0,
     0, canvas.height / SIZE,
